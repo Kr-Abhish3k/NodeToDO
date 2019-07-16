@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+            <link rel="stylesheet" type="text/css"  href="/assets/styles/styles.css">
+            <script src="https://use.fontawesome.com/2aa4b33030.js"></script>
+            <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css" integrity="sha384-i1LQnF23gykqWXg6jxC2ZbCbUMxyw5gLZY6UiUS98LYV5unm8GWmfkIS6jqJfb4E" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="Wrapper">
+            <div class="resultsTable">
+                    
+                    <table class="table table-striped">
+                            <caption>Member List</caption>
+                            
+                            <thead>
+                                <tr>
+                                    <th class="goto_addMember" colspan="6"><a href="/addMember">*Add new Member</a></th>
+                                </tr>
+                                <tr>
+                                    <th scope="col">Select</th>
+                                    <th scope="col">#</th>
+                                    <th scope="col">userName</th>
+                                    <th scope="col">ToDo</th>
+                                    <th scope="col">IsDone</th>
+                                    <th scope="col">hasAttachment</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                               <% if(people.length >0) {%>   
+                                <%for(person of people) { %>
+                                    <tr>
+                                        <td> 
+                                            <%  DeleteLink = "/api/todosDelete/"+person._id  %>
+                                            <% UpdateLink = "/api/updateTodo/"+person._id %>
+                                            <a  class="goto_delete" alt="Delete this Entry" onclick='return confirm("Are you sure to Delete this??");'  href=<%= DeleteLink %>> <i class="fa fa-trash fa-lg"> </i></a>
+                                            <a  class="goto_edit" alt="Edit this Entry" href=<%= UpdateLink %>> <i class="fas fa-pen-fancy"> </i></a>
+                                        </td>
+                                        <th scope="row"><%= person._id%></th>
+                                        <td><%= person.userName%></td>
+                                        <td><%= person.toDo%></td>
+                                        <td><%= person.isDone%></td>
+                                        <td><%= person.hasAttachment%></td>
+                                    </tr>
+                                <% } %>
+                              <% } else {%>
+                                <tr>
+                                    <td colspan='6'><p class="text-warning">Member List is Empty</p></td>
+                                </tr>
+                              <% } %>
+                                  
+                            </tbody>
+                        </table>  
+                </div>
+        </div>
+    </body>
+</html>

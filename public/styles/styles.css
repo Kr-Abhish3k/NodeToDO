@@ -1,0 +1,130 @@
+html, body {
+    min-height: 100%;
+    background-color: teal;
+    position: relative;
+  }
+
+caption {
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: bold;
+    caption-side: top !important;
+    text-align: center !important;   
+}
+
+label {
+    margin: 0;
+}
+
+#goTo_MemberList {
+    width: 250px;
+    font-size: 15px;
+    background: left no-repeat url(../images/list.svg);
+    background-position: 13px 3px;
+    background-size: 25px;
+}
+
+#goTo_MemberList:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+#addMemberForm , #idSearchForm{
+    width: 650px;
+}
+
+.resultsTable {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.resultsTable>table {
+    table-layout: fixed;
+    word-wrap: break-word;
+    background: #ffffff;
+
+}
+.goto_addMember {
+    text-align: left !important;
+    font-weight: normal;
+
+}
+
+.goto_delete {
+    padding-right: 5px;
+    border-right: 1px solid #000000;
+}
+
+.table thead th {
+    text-align: center;
+    vertical-align: middle;
+}
+
+td {
+    text-align: center;
+    vertical-align: middle !important;
+}
+
+.addBtn {
+    background: left no-repeat url(../images/database-solid.svg);
+    background-size: 20px;
+    background-position: 5px 5px; 
+    width: 145px;
+    background-color: #ffffff;
+    text-align: right; 
+    margin: 0 auto;
+}
+
+.searchBtn {
+    width: 85px;
+    background: url(../images/search-solid.svg)  left  no-repeat;
+    background-position: 2px 10px; 
+    background-size: 15px;
+    background-color: #ffffff;
+    text-align: right;
+    margin: 0 auto;
+}
+
+#deleteBtn {
+    display: none;
+}
+
+.text-danger{
+    text-align: left;
+    font-size: 0.8rem;
+    margin-bottom: 0;
+    line-height: 1;
+}
+
+.popupContent {
+    Position: absolute;
+    z-index: 10;
+    top: 50%;
+    left: 40%;
+    background: #ffffff;
+    width: 250px;
+    padding: 10px;
+}
+.popupContent button {
+    margin-left: 42%;
+}
+
+
+.PopUp.Active {
+    display: block;
+}
+
+.PopUp.Inactive {
+    display: none;
+}
+
+ .transparentBg {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #000000;
+    opacity:  0.8;
+    z-index: 9; 
+}
